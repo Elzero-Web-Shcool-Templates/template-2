@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasper T2</title>
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="style/normalize.css">
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="style/all.min.css">
+    <!-- Main Template CSS File -->
+    <link rel="stylesheet" href="style/main.css">
+    <!-- Header CSS File -->
+    <link rel="stylesheet" href="style/sections/header.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Start Header -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo"><img src="Images/logo.webp" alt="Logo"></a>
+            <nav>
+                <i class="fas fa-bars toggle-menu"></i>
+                <ul>
+                    <li><a href="#home" class="active" onclick="navigate(this)">Home</a></li>
+                    <li><a href="#services" onclick="navigate(this)">Services</a></li>
+                    <li><a href="#portfolio" onclick="navigate(this)">Portfolio</a></li>
+                    <li><a href="#about" onclick="navigate(this)">About</a></li>
+                    <li><a href="#pricing" onclick="navigate(this)">Pricing</a></li>
+                    <li><a href="#contact" onclick="navigate(this)">Contact</a></li>
+                </ul>
+                <div class="form">
+                    <!-- <input type="search" placeholder="Search..."> -->
+                    <a href="#"><i class="fas fa-search"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <script>
+        ToggleMenu = document.querySelector(".toggle-menu");
+        ToggleMenu.onclick = function() {
+            ToggleMenu.classList.toggle("open-toggle-menu");
+        }
+
+        function navigate(link) {
+            activeLink = document.querySelector("nav ul li a.active");
+            activeLink.classList.remove("active");
+            link.classList.add("active");
+            ToggleMenu.classList.remove("open-toggle-menu");
+        }
+    </script>
+</body>
+</html>

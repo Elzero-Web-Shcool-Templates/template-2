@@ -1,7 +1,9 @@
 /* Start Variables */
 :root {
     --main-color: #19C8FA;
-    --transparent-color: rgb(15 116 143 / 70%)
+    --transparent-color: rgb(15 116 143 / 70%);
+    --section-padding: 100px;
+    --paragraph-color: #777;
 }
 /* End Variables */
 
@@ -20,7 +22,6 @@ html {
 
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: black;
 }
 
 ul {

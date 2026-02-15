@@ -79,12 +79,12 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit dolore itaque numquam dolorem sequi. Beatae reiciendis saepe voluptatum nesciunt neque maiores fugiat modi! Autem numquam, fugiat beatae nulla praesentium delectus.</p>
             </div>
         </div>
-        <a href="#"><i class="fas fa-angle-left change-background chanage-background-left fa-2x"></i></a>
-        <a href="#"><i class="fas fa-angle-right change-background change-background-right fa-2x"></i></a>
+        <i class="fas fa-angle-left change-background change-background-left fa-2x"></i>
+        <i class="fas fa-angle-right change-background change-background-right fa-2x"></i>
         <ul class="bullets">
-            <a href="#"><li></li></a>
-            <a href="#"><li class="active"></li></a>
-            <a href="#"><li></li></a>
+            <li data-index="0"></li>
+            <li data-index="1"></li>
+            <li data-index="2"></li>
         </ul>
     </div>
     <!-- End Landing -->
@@ -427,7 +427,7 @@
     <!-- End Subscribe -->
 
     <!-- Start Contact Us -->
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="container">
             <div class="main-heading">
                 <h2>Contact Us</h2>
@@ -468,18 +468,8 @@
     </div>
     <!-- End Footer -->
 
-    <script>
-        ToggleMenu = document.querySelector(".toggle-menu");
-        ToggleMenu.onclick = function() {
-            ToggleMenu.classList.toggle("open-toggle-menu");
-        }
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
 
-        function navigate(link) {
-            activeLink = document.querySelector("nav ul li a.active");
-            activeLink.classList.remove("active");
-            link.classList.add("active");
-            ToggleMenu.classList.remove("open-toggle-menu");
-        }
-    </script>
 </body>
 </html>

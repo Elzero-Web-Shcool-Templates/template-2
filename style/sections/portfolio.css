@@ -66,14 +66,20 @@
 }
 
 .portfolio .more {
-    background-color: var(--main-color);
-    color: white;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
     padding: 15px 20px;
     display: block;
     width: fit-content;
     margin: 30px auto;
     text-decoration: none;
     text-transform: uppercase;
+    transition: var(--transition-duration);
+}
+
+.portfolio .more:hover {
+    background-color: var(--main-color);
+    color: white;
 }
 
 @media (min-width: 768px) {

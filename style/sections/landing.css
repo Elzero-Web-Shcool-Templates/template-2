@@ -1,9 +1,11 @@
 .landing {
     min-height: 100vh;
-    background-image: url(../../Images/landing.webp);
+    /* background-image: url(../../Images/landing.webp); */
     background-size: cover;
+    background-position: center;
     background-color: #1F2021;
     position: relative;
+    transition: background-image var(--transition-duration) ease-in-out;
 }
 
 .landing .overlay {
@@ -49,6 +51,14 @@
     top: 50%;
     transform: translateY(-50%);
     color: #ddd;
+    height: 75px;
+    align-content: center;
+    cursor: pointer;
+    transition: var(--transition-duration);
+}
+
+.landing .change-background:hover {
+    background-color: rgba(255, 255, 255, 20%);
 }
 
 .landing .change-background-left{
@@ -73,6 +83,7 @@
     border: 1px solid white;
     border-radius: 50%;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .landing .bullets li.active {
@@ -98,3 +109,5 @@
         display: none;
     }
 }
+
+/* Animation */

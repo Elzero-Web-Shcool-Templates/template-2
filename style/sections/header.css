@@ -2,8 +2,10 @@ header {
     position: absolute;
     left: 0;
     width: 100%;
-    z-index: 2;
-    /* position: fixed; */
+    z-index: 5;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 50%);
+    
 }
 
 header .container {

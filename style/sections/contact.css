@@ -30,14 +30,21 @@
 }
 
 .contact .content form input[type="submit"] {
-    background-color: var(--main-color);
-    color: white;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
     padding: 20px;
-    border: none;
+    /* border: none; */
+    background-color: transparent;
     display: flex;
     margin-left: auto;
     text-transform: uppercase;
     cursor: pointer;
+    transition: var(--transition-duration);
+}
+
+.contact .content form input[type="submit"]:hover {
+    background-color: var(--main-color);
+    color: white;
 }
 
 .contact .content .info {

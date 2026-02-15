@@ -1,38 +1,49 @@
-const landing = document.querySelector(".landing");
-const leftArrow = document.querySelector(".change-background-left");
-const rightArrow = document.querySelector(".change-background-right");
+const slides = document.querySelector(".slides");
 const bullets = document.querySelectorAll(".bullets li");
-
-const images = [
-    "Images/landing-0.webp",
-    "Images/landing-1.webp",
-    "Images/landing-2.webp",
-];
+const rightArrow = document.querySelector(".change-background-right");
+const leftArrow = document.querySelector(".change-background-left");
 
 let currentIndex = 0;
+const totalSlides = document.querySelectorAll(".slide").length;
+const realSlides = totalSlides - 1;
 
-function updateSlider() {
-    landing.style.backgroundImage = `url(${images[currentIndex]})`;
+function updateSlider(transition = true) {
+    if (transition) {
+        slides.style.transition = "transform 0.6s ease-in-out";
+    } else {
+        slides.style.transition = "none";
+    }
+
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 
     bullets.forEach(b => b.classList.remove("active"));
-    bullets[currentIndex].classList.add("active");
+    bullets[currentIndex % realSlides].classList.add("active");
 }
 
-rightArrow.addEventListener("click", function () {
+function nextSlide() {
     currentIndex++;
-    if (currentIndex >= images.length) {
-        currentIndex = 0;
-    }
     updateSlider();
-});
 
-leftArrow.addEventListener("click", function () {
-    currentIndex--;
-    if (currentIndex < 0) {
-        currentIndex = images.length - 1;
+    if (currentIndex === totalSlides - 1) {
+        setTimeout(() => {
+            currentIndex = 0;
+            updateSlider(false); 
+        }, 600);
     }
-    updateSlider();
-});
+}
+
+function prevSlide() {
+    if (currentIndex === 0) {
+        currentIndex = realSlides;
+        updateSlider(false);
+    } else {
+        currentIndex--;
+        updateSlider();
+    }
+}
+
+rightArrow.addEventListener("click", nextSlide);
+leftArrow.addEventListener("click", prevSlide);
 
 bullets.forEach(bullet => {
     bullet.addEventListener("click", function () {
@@ -41,12 +52,6 @@ bullets.forEach(bullet => {
     });
 });
 
-setInterval(function () {
-    currentIndex++;
-    if (currentIndex >= images.length) {
-        currentIndex = 0;
-    }
-    updateSlider();
-}, 5000);
+setInterval(nextSlide, 5000);
 
 updateSlider();
